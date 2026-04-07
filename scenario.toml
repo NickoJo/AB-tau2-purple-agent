@@ -1,0 +1,14 @@
+[green_agent]
+# agentbeats_id = ""
+image = "ghcr.io/rdi-foundation/tau2-agentbeats:latest"
+env = { LOG_LEVEL = "INFO", OPENAI_API_KEY = "${OPENAI_API_KEY}", GEMINI_API_KEY = "${GEMINI_API_KEY}", DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}" }
+
+[[participants]]
+# agentbeats_id = ""
+image = "ghcr.io/rdi-foundation/tau2-purple-agentbeats:latest"
+name = "agent"
+env = { LOG_LEVEL = "INFO", AGENT_LLM = "openai/gpt-4o-mini", OPENAI_API_KEY = "${OPENAI_API_KEY}", GEMINI_API_KEY = "${GEMINI_API_KEY}", DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}" }
+
+[config]
+domain = "airline"
+user_llm = "openai/gpt-4o-mini"
