@@ -1,7 +1,7 @@
 {
   manifest_version: "0.1.0",
   program: {
-    image: "ghcr.io/NickoJo/tau2-purple:latest",
+    image: "ghcr.io/nickojo/ab-tau2-purple-agent:latest",
     entrypoint: ["uv", "run", "src/server.py", "--host", "0.0.0.0", "--port", "9009"],
     env: {
       AGENT_MODEL: "${config.agent_model}",
