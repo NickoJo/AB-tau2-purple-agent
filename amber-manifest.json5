@@ -1,0 +1,34 @@
+{
+  manifest_version: "0.1.0",
+  program: {
+    image: "ghcr.io/NickoJo/tau2-purple:latest",
+    entrypoint: ["uv", "run", "src/server.py", "--host", "0.0.0.0", "--port", "9009"],
+    env: {
+      AGENT_MODEL: "${config.agent_model}",
+      LLM_API_KEY: "${config.llm_api_key}",
+      LLM_BASE_URL: "${config.llm_base_url}",
+      LOG_LEVEL: "INFO",
+    },
+    network: {
+      endpoints: [
+        { name: "endpoint", port: 9009 }
+      ]
+    }
+  },
+  config_schema: {
+    type: "object",
+    properties: {
+      agent_model: { type: "string", default: "qwen/qwen3.6-plus:free" },
+      llm_api_key: { type: "string", secret: true },
+      llm_base_url: { type: "string", default: "https://openrouter.ai/api/v1" },
+    },
+    required: ["llm_api_key"],
+    additionalProperties: false,
+  },
+  provides: {
+    a2a: { kind: "a2a", endpoint: "endpoint" }
+  },
+  exports: {
+    a2a: "a2a"
+  }
+}
