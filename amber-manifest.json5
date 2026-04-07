@@ -18,9 +18,9 @@
   config_schema: {
     type: "object",
     properties: {
-      agent_model: { type: "string", default: "qwen/qwen3.6-plus:free" },
+      agent_model: { type: "string", default: "gpt-4o" },
       llm_api_key: { type: "string", secret: true },
-      llm_base_url: { type: "string", default: "https://openrouter.ai/api/v1" },
+      llm_base_url: { type: "string", default: "https://openai.bothub.ru/v1" },
     },
     required: ["llm_api_key"],
     additionalProperties: false,
