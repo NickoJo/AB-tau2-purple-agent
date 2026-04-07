@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "https://openai.bothub.ru/v1")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "")
-AGENT_MODEL = os.environ.get("AGENT_MODEL", "gpt-4o")
+AGENT_MODEL = os.environ.get("AGENT_MODEL", "gpt-4o-mini")
 
 WINDOW_SIZE = 30
 

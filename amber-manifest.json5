@@ -18,7 +18,7 @@
   config_schema: {
     type: "object",
     properties: {
-      agent_model: { type: "string", default: "gpt-4o" },
+      agent_model: { type: "string", default: "gpt-4o-mini" },
       llm_api_key: { type: "string", secret: true },
       llm_base_url: { type: "string", default: "https://openai.bothub.ru/v1" },
     },
